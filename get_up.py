@@ -90,7 +90,7 @@ def main(github_token, repo_name, weather_message, tele_token, tele_chat_id):
                 ),
                 data={
                     "chat_id": tele_chat_id,
-                    "text": body,
+                    "text": bodylate,
                 },
             )
 
