@@ -57,7 +57,7 @@ def main(github_token, repo_name, weather_message, tele_token, tele_chat_id):
     u = login(github_token)
     repo = u.get_repo(repo_name)
     issue = repo.get_issue(GET_UP_ISSUE_NUMBER)
-#     is_toady = get_today_get_up_status(issue)
+    is_toady = get_today_get_up_status(issue)
 #      if is_toady:
 #          print("Today I have recorded the wake up time")
 #          return
