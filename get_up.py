@@ -80,7 +80,7 @@ def main(github_token, repo_name, weather_message, tele_token, tele_chat_id):
                 },
             )
     else:
-        bodylate = body + "\n 你今天起的还蛮“早”的，半天就酱紫过去咯\n" 
+        bodylate = body + f"\n 你今天起的还蛮“早”的，半天就酱紫过去咯\n" 
          issue.create_comment(bodylate)
         # send to telegram
         if tele_token and tele_chat_id:
