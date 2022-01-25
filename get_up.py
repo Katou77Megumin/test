@@ -12,7 +12,7 @@ GET_UP_MESSAGE_TEMPLATE = (
 )
 SENTENCE_API = "https://v1.jinrishici.com/all"
 DEFAULT_SENTENCE = "赏花归去马如飞\r\n去马如飞酒力微\r\n酒力微醒时已暮\r\n醒时已暮赏花归\r\n"
-TIMEZONE = "Asia/Shanghai"
+# TIMEZONE = "Asia/Shanghai"
 
 
 def login(token):
@@ -35,7 +35,8 @@ def get_today_get_up_status(issue):
     if not comments:
         return False
     latest_comment = comments[-1]
-    now = pendulum.now(TIMEZONE)
+    now = pendulum.now()
+#   now = pendulum.now(TIMEZONE)
     latest_day = pendulum.instance(latest_comment.created_at).in_timezone(
         "Asia/Shanghai"
     )
@@ -45,7 +46,8 @@ def get_today_get_up_status(issue):
 
 def make_get_up_message():
     sentence = get_one_sentence()
-    now = pendulum.now(TIMEZONE)
+    now = pendulum.now()
+#   now = pendulum.now(TIMEZONE)
     # 3 - 7 means early for me
     is_get_up_early = 6 <= now.hour <=12  
     get_up_time = now.to_datetime_string()
